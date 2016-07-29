@@ -1,3 +1,26 @@
-<div>
-  Hello
+<div class = " container " >
+  <div class = " status-bar " >
+    <div class = " cocktail-name left" >
+      {{ cocktail.name }}
+    </div>
+    <div class="right">
+      <div class = " score " >
+        Tips: ${{ score }}
+      </div>
+      <div class = " time " >
+        Time: {{ time }}
+      </div>
+    </div>
+  </div>
+  <div class = " cocktail-image " >
+    <img ng-src="images/{{ cocktail.image }}">
+  </div>
+  <div class = " ingredients " >
+    <div class = " ingredient" ng-repeat="ingredient in ingredients track by $index">
+      <button class = "btn-ingredient shadow" ng-class="{'selected': ingredient.selected}"
+        ng-click="onClickIngredient( $index )">
+        {{ ingredient.name }}
+      </button>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,72 @@
+*{
+  font-size: 22px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.clear{
+  clear:both;
+}
+.right{
+  float: right;
+}
+.left{
+  float: left;
+}
+html, body {
+    height: 100%;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.status-bar > div {
+  display: inline-block;
+}
+.cocktail-name{
+  font-size: 35px;
+  margin-left: 4px;
+}
+.time {
+  margin-right: 0px;
+}
+
+.score, .time {
+  font-size: 18px;
+}
+.ingredients {
+  position: absolute;
+  bottom: 14px;
+  margin: 4px 16px;
+  text-align: center;
+}
+.ingredient {
+  display: inline-block;
+  margin: 2px 4px;
+  border-radius: 20px;
+}
+.btn-ingredient{
+  border-radius: 20px;
+  border: 1.5px solid #000;
+  background: #fff;
+  font-size: 22px;
+}
+.selected {
+  background: #89a4d1;
+}
+.cocktail-image{
+  position: relative;
+}
+.cocktail-image > img {
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 50px;
+  z-index: -1;
+}
+.shadow {
+  -webkit-box-shadow: 1px 1px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    1px 1px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         1px 1px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
