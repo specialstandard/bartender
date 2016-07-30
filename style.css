@@ -74,6 +74,8 @@ html, body {
   position: absolute;
   bottom: 50px;
   left: 100px;
+  background: #fff;
+  opacity: .8;
 }
 .ingredient-list-item {
   display: block;
@@ -142,4 +144,6 @@ html, body {
   background-size: contain;
   background-repeat: no-repeat;
   padding-left: 30px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
 }
