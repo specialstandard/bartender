@@ -70,6 +70,15 @@ html, body {
   display: inline-block;
   margin: 2px 4px;
 }
+.ingredients-list{
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
+.ingredient-list-item {
+  display: block;
+  margin: 2px 4px;
+}
 .btn-round{
   border-radius: 13px;
   border: 1.5px solid #000;
@@ -81,6 +90,9 @@ html, body {
 }
 .btn-hint {
   width: 93px;
+}
+.btn-option-big {
+  width: 90%;
 }
 .selected {
   background: #89a4d1;
@@ -113,6 +125,21 @@ html, body {
   bottom: 0px;
 }
 .options {
-  padding-top: 90px;
+  padding-top: 113px;
   padding-left: 20px;
+}
+.cocktail-list {
+  position: absolute;
+  border: 1px solid black;
+  background: #fff;
+  border-radius: 4px;
+  padding: 4px;
+  top: 190px;
+  right: 3px;
+  z-index: 2;
+}
+.cocktail-list-item {
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 30px;
 }

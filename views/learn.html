@@ -1,0 +1,41 @@
+<div class = " container "  ng-class="{'yellow-bg': showOverlay}" >
+  <div class = " status-bar " >
+
+    <div class = " cocktail-name " >
+      {{ cocktail.name }}
+    </div>
+
+  </div>
+
+  <div class = " menu ">
+    <button class = "btn-round shadow" ng-click = "onClickMenu()">
+      <i class = "fa fa-bars" ></i> Menu
+    </button>
+  </div>
+  <div class = " hint ">
+    <button class = "btn-round btn-hint shadow" ng-click = "onClickList()">
+      <i class = " fa fa-glass " ></i> List
+    </button>
+  </div>
+
+  <div class = "cocktail-list" ng-if="showList">
+    <div class = "cocktail-list-item"
+      ng-style="{'background-image': 'url(images/' + cocktail.image + ')'}"
+      ng-repeat="cocktail in cocktails" ng-click="onClickCocktail( cocktail )">
+      {{ cocktail.name }}
+    </div>
+  </div>
+
+  <div class = " cocktail-image " >
+    <img ng-src="images/{{ cocktail.image }}">
+  </div>
+
+  <div class = " ingredients-list " >
+    <div class = " ingredient-list-item"
+      ng-repeat="ingredient in cocktail.ingredients track by $index">
+        {{ ingredient }}
+    </div>
+  </div>
+
+  </div>
+</div>

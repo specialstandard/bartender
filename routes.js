@@ -8,5 +8,9 @@ app.config( function( $routeProvider ){
       templateUrl: 'views/menu.html',
       controller: 'MenuController'
     })
+    .when( '/learn', {
+      templateUrl: 'views/learn.html',
+      controller: 'LearnController'
+    })
     .otherwise('/')
 })
