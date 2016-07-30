@@ -1,15 +1,26 @@
-app.controller('MainController', ['$scope', '$interval', function( $scope, $interval ){
+app.controller('MainController', ['$scope', '$interval', '$location', '$timeout',
+ function( $scope, $interval, $location, $timeout ){
 
   $scope.cocktails = [
     {
       name:'Cosmopolitan',
-      ingredients: [ 'Lime Juice', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
+      ingredients: [ 'Lime', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
       image: 'cosmopolitan.jpg'
+    },
+    {
+      name:'Long Island Iced Tea',
+      ingredients: [ 'Rum Dark', 'Vodka', 'Tequila', 'Gin', 'Triple Sec', 'Lemon', 'Cola' ],
+      image: 'long-island-iced-tea.jpg'
     },
     {
       name:'Manhattan',
       ingredients: [ 'Whiskey', 'Vermouth', 'Bitters', 'Cherry' ],
       image: 'manhattan.jpg'
+    },
+    {
+      name:'Margarita',
+      ingredients: [ 'Tequila', 'Triple Sec', 'Lime', 'Salt' ],
+      image: 'margarita.jpg'
     },
     {
       name:'Martini',
@@ -18,31 +29,42 @@ app.controller('MainController', ['$scope', '$interval', function( $scope, $inte
     },
     {
       name:'Mojito',
-      ingredients: [ 'White Rum', 'Mint', 'Soda Water', 'Lime Juice', 'Sugar' ],
+      ingredients: [ 'Rum White', 'Mint', 'Soda Water', 'Lime', 'Sugar' ],
       image: 'mojito.jpg'
+    },
+    {
+      name:'Pina Colada',
+      ingredients: [ 'Rum White', 'Coconut Milk', 'Pineapple', 'Cherry' ],
+      image: 'pina-colada.png'
     },
 
   ]
 
   $scope.ingredients = [
-    { name: 'Bitters', selected: false},
-    { name: 'Bourbon', selected: false},
-    { name: 'Cherry', selected: false},
-    { name: 'Cointreau', selected: false},
-    { name: 'Cranberry Juice', selected: false},
-    { name: 'Dark Rum', selected: false},
-    { name: 'Gin', selected: false},
-    { name: 'Lime Juice', selected: false},
-    { name: 'Lemon Slice', selected: false},
-    { name: 'Lime Wedge', selected: false},
-    { name: 'Mint', selected: false},
-    { name: 'Soda Water', selected: false},
-    { name: 'Sugar', selected: false},
-    { name: 'Olive', selected: false},
-    { name: 'Vermouth', selected: false},
-    { name: 'Vodka Citron', selected: false},
-    { name: 'Whiskey', selected: false},
-    { name: 'White Rum', selected: false},
+    { name: 'Bitters', selected: false, hint: false},
+    { name: 'Bourbon', selected: false, hint: false},
+    { name: 'Cherry', selected: false, hint: false},
+    { name: 'Cointreau', selected: false, hint: false},
+    { name: 'Coconut Milk', selected: false, hint: false},
+    { name: 'Cola', selected: false, hint: false},
+    { name: 'Cranberry Juice', selected: false, hint: false},
+    { name: 'Rum Dark', selected: false, hint: false},
+    { name: 'Rum White', selected: false, hint: false},
+    { name: 'Gin', selected: false, hint: false},
+    { name: 'Lemon', selected: false, hint: false},
+    { name: 'Lime', selected: false, hint: false},
+    { name: 'Mint', selected: false, hint: false},
+    { name: 'Pineapple', selected: false, hint: false},
+    { name: 'Salt', selected: false, hint: false},
+    { name: 'Soda Water', selected: false, hint: false},
+    { name: 'Sugar', selected: false, hint: false},
+    { name: 'Tequila', selected: false, hint: false},
+    { name: 'Triple Sec', selected: false, hint: false},
+    { name: 'Olive', selected: false, hint: false},
+    { name: 'Vermouth', selected: false, hint: false},
+    { name: 'Vodka', selected: false, hint: false},
+    { name: 'Vodka Citron', selected: false, hint: false},
+    { name: 'Whiskey', selected: false, hint: false},
 
   ]
 
@@ -65,8 +87,12 @@ app.controller('MainController', ['$scope', '$interval', function( $scope, $inte
   }
 
   $scope.onCorrectGuess = function(){
+    $scope.showOverlay = true
     $scope.score++
     $scope.unselectIngredients()
+    $interval ( function (){
+      $scope.showOverlay = false
+    }, 1000)
     $scope.presentCocktail()
   }
   $scope.unselectIngredients = function(){
@@ -82,8 +108,35 @@ app.controller('MainController', ['$scope', '$interval', function( $scope, $inte
     $scope.cocktail = $scope.cocktails [ rand ]
   }
 
+  $scope.onClickMenu = function (){
+    $location.url('/menu')
+  }
+
+  $scope.onClickHint = function (){
+    var bHintDone = false
+    for ( var i = 0; i < $scope.cocktail.ingredients.length; i++ ){
+      var x = $scope.cocktail.ingredients [ i ]
+      for ( var j = 0; j < $scope.ingredients.length; j++ ){
+        if ( bHintDone == true ){
+          break
+        }
+        var ingredient = $scope.ingredients [ j ]
+        if ( ingredient.name == x ) {
+          if ( ingredient.selected == false ) {
+            ingredient.hint = true
+            $timeout( function (){
+              ingredient.hint = false
+            }, 1000 )
+            bHintDone = true
+          }
+        }
+      }
+    }
+  }
+
   $scope.score = 0
   $scope.seconds = 0
+  $scope.showOverlay = false
   $scope.presentCocktail()
 
   $interval ( function (){

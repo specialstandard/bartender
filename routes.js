@@ -4,5 +4,9 @@ app.config( function( $routeProvider ){
       templateUrl: 'views/main.html',
       controller: 'MainController'
     })
+    .when( '/menu', {
+      templateUrl: 'views/menu.html',
+      controller: 'MenuController'
+    })
     .otherwise('/')
 })

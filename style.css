@@ -1,7 +1,12 @@
 *{
+  font-family: sans-serif;
   font-size: 22px;
   box-sizing: border-box;
   outline: none;
+}
+
+html {
+  border: 5px solid black;
 }
 
 .clear{
@@ -21,19 +26,39 @@ html, body {
   width: 100%;
   height: 100%;
 }
+.status-bar {
+  text-align: center;
+}
 .status-bar > div {
   display: inline-block;
 }
 .cocktail-name{
   font-size: 35px;
-  margin-left: 4px;
-}
-.time {
-  margin-right: 0px;
 }
 
 .score, .time {
   font-size: 18px;
+}
+.score {
+  position: absolute;
+  right: 0px;
+  top: 40px;
+}
+.time {
+  position: absolute;
+  right: 0px;
+  top: 60px;
+}
+.menu {
+  position: absolute;
+  right: 0px;
+  top: 100px;
+}
+
+.hint {
+  position: absolute;
+  right: 0px;
+  top: 160px;
 }
 .ingredients {
   position: absolute;
@@ -44,13 +69,18 @@ html, body {
 .ingredient {
   display: inline-block;
   margin: 2px 4px;
-  border-radius: 20px;
 }
-.btn-ingredient{
-  border-radius: 20px;
+.btn-round{
+  border-radius: 13px;
   border: 1.5px solid #000;
   background: #fff;
   font-size: 22px;
+}
+.btn-ingredient {
+  font-size: 18px;
+}
+.btn-hint {
+  width: 93px;
 }
 .selected {
   background: #89a4d1;
@@ -62,11 +92,27 @@ html, body {
   width: 80%;
   position: absolute;
   left: 10%;
-  top: 50px;
+  top: 20px;
   z-index: -1;
 }
 .shadow {
   -webkit-box-shadow: 1px 1px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    1px 1px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
   box-shadow:         1px 1px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.yellow-bg {
+  background: yellow;
+}
+.overlay{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top: 0px
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.options {
+  padding-top: 90px;
+  padding-left: 20px;
 }
