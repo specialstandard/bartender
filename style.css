@@ -79,6 +79,7 @@ html, body {
 .ingredient-list-item {
   display: block;
   margin: 2px 4px;
+  font-size: 22px;
 }
 .btn-round{
   border-radius: 13px;
@@ -147,6 +148,7 @@ html, body {
 .cocktail-list-item {
   background-size: contain;
   background-repeat: no-repeat;
+  font-size: 22px;
   padding-left: 30px;
   cursor: pointer;
   border-bottom: 1px solid #ddd;
