@@ -3,6 +3,11 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
 
   $scope.cocktails = [
     {
+      name:'Caipirinha',
+      ingredients: [ 'Rum White', 'Brown Sugar', 'Lime' ],
+      image: 'caipirinha.png'
+    },
+    {
       name:'Cosmopolitan',
       ingredients: [ 'Lime', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
       image: 'cosmopolitan.jpg'
@@ -28,6 +33,11 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
       image: 'martini.jpg'
     },
     {
+      name:'Mint Julep',
+      ingredients: [ 'Bourbon', 'Water', 'Sugar', 'Mint' ],
+      image: 'mint-julep.jpg'
+    },
+    {
       name:'Mojito',
       ingredients: [ 'Rum White', 'Mint', 'Soda Water', 'Lime', 'Sugar' ],
       image: 'mojito.jpg'
@@ -43,6 +53,7 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
   $scope.ingredients = [
     { name: 'Bitters', selected: false, hint: false},
     { name: 'Bourbon', selected: false, hint: false},
+    { name: 'Brown Sugar', selected: false, hint: false},
     { name: 'Cherry', selected: false, hint: false},
     { name: 'Cointreau', selected: false, hint: false},
     { name: 'Coconut Milk', selected: false, hint: false},
@@ -64,6 +75,7 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     { name: 'Vermouth', selected: false, hint: false},
     { name: 'Vodka', selected: false, hint: false},
     { name: 'Vodka Citron', selected: false, hint: false},
+    { name: 'Water', selected: false, hint: false},
     { name: 'Whiskey', selected: false, hint: false},
 
   ]
