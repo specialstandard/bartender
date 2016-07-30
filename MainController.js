@@ -154,6 +154,9 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     $scope.score = 0
     $scope.seconds = 60
     $scope.showOverlay = false
+    for ( var i = 0; i< $scope.ingredients; i++ ){
+      $scope.ingredients[i].selected = false
+    }
     $scope.presentCocktail()
 
     var counter = $interval ( function (){
