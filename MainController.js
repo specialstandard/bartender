@@ -60,7 +60,6 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     { name: 'Cola', selected: false, hint: false},
     { name: 'Cranberry Juice', selected: false, hint: false},
     { name: 'Dark Rum', selected: false, hint: false},
-    { name: 'White Rum', selected: false, hint: false},
     { name: 'Gin', selected: false, hint: false},
     { name: 'Lemon', selected: false, hint: false},
     { name: 'Lime', selected: false, hint: false},
@@ -77,6 +76,7 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     { name: 'Vodka Citron', selected: false, hint: false},
     { name: 'Water', selected: false, hint: false},
     { name: 'Whiskey', selected: false, hint: false},
+    { name: 'White Rum', selected: false, hint: false},
 
   ]
 
@@ -146,14 +146,28 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     }
   }
 
-  $scope.score = 0
-  $scope.seconds = 0
-  $scope.showOverlay = false
-  $scope.presentCocktail()
+  $scope.onClickTryAgain = function () {
+    $scope.init()
+  }
+  $scope.init = function () {
+    $scope.gameOver = false
+    $scope.score = 0
+    $scope.seconds = 60
+    $scope.showOverlay = false
+    $scope.presentCocktail()
 
-  $interval ( function (){
-    $scope.seconds++
-    $scope.time =''+ (Math.floor($scope.seconds / 60) > 0 ? Math.floor($scope.seconds / 60) + 'm ' : '') + $scope.seconds % 60 + 's'
-  }, 1000)
+    var counter = $interval ( function (){
+      if ( $scope.seconds == 0 ){
+        $scope.gameOver = true
+        $interval.cancel( counter )
+        return
+      }
+      $scope.seconds--
+      $scope.time =''+ (Math.floor($scope.seconds / 60) > 0 ? Math.floor($scope.seconds / 60) + 'm ' : '') + $scope.seconds % 60 + 's'
+    }, 1000)
+  }
+
+  $scope.init()
+
 
 }])

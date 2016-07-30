@@ -34,5 +34,10 @@
       </button>
     </div>
   </div>
+  <div class = gameOver ng-if="gameOver">
+    <h1>Game Over</h1><br><br>
+    <h3>Your Tips: $ {{ score }}</h3>
+    <br><br>
+    <button class="btn-round" ng-click = "onClickTryAgain()">Try again</button>
   </div>
 </div>

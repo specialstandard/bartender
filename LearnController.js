@@ -60,7 +60,6 @@ app.controller('LearnController', ['$scope', '$interval', '$location', '$timeout
     { name: 'Cola', selected: false, hint: false},
     { name: 'Cranberry Juice', selected: false, hint: false},
     { name: 'Dark Rum', selected: false, hint: false},
-    { name: 'White Rum', selected: false, hint: false},
     { name: 'Gin', selected: false, hint: false},
     { name: 'Lemon', selected: false, hint: false},
     { name: 'Lime', selected: false, hint: false},
@@ -77,6 +76,7 @@ app.controller('LearnController', ['$scope', '$interval', '$location', '$timeout
     { name: 'Vodka Citron', selected: false, hint: false},
     { name: 'Water', selected: false, hint: false},
     { name: 'Whiskey', selected: false, hint: false},
+    { name: 'White Rum', selected: false, hint: false},
 
   ]
   $scope.cocktail = $scope.cocktails [ 1 ]   //  Cosmopolitan default
