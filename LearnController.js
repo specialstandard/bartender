@@ -79,7 +79,7 @@ app.controller('LearnController', ['$scope', '$interval', '$location', '$timeout
     { name: 'Whiskey', selected: false, hint: false},
 
   ]
-
+  $scope.cocktail = $scope.cocktails [ 1 ]   //  Cosmopolitan default
   $scope.showList = false
 
   $scope.onClickMenu = function (){
