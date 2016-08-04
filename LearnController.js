@@ -10,8 +10,12 @@ app.controller('LearnController', ['$scope', '$interval', '$location', '$timeout
     $location.url('/menu')
   }
 
-  $scope.onClickList = function () {
+  $scope.onClickList = function ( $event ) {
+    $event.stopPropagation()
     $scope.showList = !$scope.showList
+  }
+  $scope.onClickOutSideList = function () {
+      $scope.showList = false
   }
 
   $scope.onClickCocktail = function ( cocktail ){

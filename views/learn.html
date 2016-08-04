@@ -1,4 +1,4 @@
-<div class = " container "  ng-class="{'yellow-bg': showOverlay}" >
+<div class = " container "  ng-class="{'yellow-bg': showOverlay}" ng-click="onClickOutSideList()">
   <div class = " status-bar " >
 
     <div class = " cocktail-name " >
@@ -13,7 +13,7 @@
     </button>
   </div>
   <div class = " hint ">
-    <button class = "btn-round btn-hint shadow" ng-click = "onClickList()">
+    <button class = "btn-round btn-hint shadow" ng-click = "onClickList( $event )">
       <i class = " fa fa-glass " ></i> List
     </button>
   </div>
