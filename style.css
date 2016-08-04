@@ -51,7 +51,7 @@ html, body {
 .menu {
   position: absolute;
   right: 0px;
-  top: 100px;
+  top: 65px;
 }
 
 .hint {
@@ -133,7 +133,7 @@ html, body {
   text-align: center;
 }
 .options {
-  padding-top: 113px;
+  padding-top: 90px;
   padding-left: 20px;
 }
 .cocktail-list {
