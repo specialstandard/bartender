@@ -1,4 +1,5 @@
 app.factory('preferencesService', ['$timeout', function( $timeout ){
+  
   return {
     difficulty: 'easy',
     startTime: 60,

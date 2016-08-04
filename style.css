@@ -162,6 +162,9 @@ html, body {
   cursor: pointer;
   border-bottom: 1px solid #ddd;
 }
+.cocktail-list-item:active {
+  background: #89a4d1;
+}
 .center {
   text-align: center;
 }
