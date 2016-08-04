@@ -3,13 +3,13 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
   cocktails: [
     {
       name:'Caipirinha',
-      ingredients: [ 'White Rum', 'Brown Sugar', 'Lime Juice' ],
+      ingredients: [ 'White Rum', 'Lime Juice', 'Brown Sugar' ],
       image: 'caipirinha.png',
       difficulty: 'easy'
     },
     {
       name:'Cosmopolitan',
-      ingredients: [ 'Lime Juice', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
+      ingredients: [ 'Vodka Citron', 'Cointreau', 'Cranberry Juice', 'Lime Juice' ],
       image: 'cosmopolitan.jpg'
     },
     {
@@ -41,7 +41,7 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
     },
     {
       name:'Mojito',
-      ingredients: [ 'White Rum', 'Mint', 'Soda Water', 'Lime Juice', 'Sugar' ],
+      ingredients: [ 'White Rum', 'Soda Water', 'Lime Juice', 'Sugar', 'Mint' ],
       image: 'mojito.jpg'
     },
     {
