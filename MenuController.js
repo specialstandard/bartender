@@ -1,5 +1,8 @@
-app.controller('MenuController', ['$scope', '$interval', '$location',
-  function( $scope, $interval, $location ){
+app.controller('MenuController', ['$scope', '$interval', '$location', 'preferencesService',
+  function( $scope, $interval, $location, preferencesService ){
+
+  $scope.difficulty = preferencesService.getDifficulty()
+  $scope.startTime = preferencesService.getStartTime()
 
   $scope.onClickBack = function () {
     //$location.url( '/' )
@@ -12,5 +15,13 @@ app.controller('MenuController', ['$scope', '$interval', '$location',
 
   $scope.onClickLearn = function () {
     $location.url( '/learn' )
+  }
+  $scope.onClickDifficulty = function ( difficulty ) {
+    preferencesService.setDifficulty( difficulty )
+    $scope.difficulty = preferencesService.getDifficulty()
+  }
+  $scope.onClickStartTime = function ( time ) {
+    preferencesService.setStartTime( time )
+    $scope.startTime = preferencesService.getStartTime()
   }
 }])

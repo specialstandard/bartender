@@ -1,36 +1,39 @@
-app.controller('MainController', ['$scope', '$interval', '$location', '$timeout',
- function( $scope, $interval, $location, $timeout ){
+app.controller('MainController', ['$scope', '$interval', '$location', '$timeout', 'preferencesService',
+ function( $scope, $interval, $location, $timeout, preferencesService ){
 
   $scope.cocktails = [
     {
       name:'Caipirinha',
-      ingredients: [ 'White Rum', 'Brown Sugar', 'Lime' ],
-      image: 'caipirinha.png'
+      ingredients: [ 'White Rum', 'Brown Sugar', 'Lime Juice' ],
+      image: 'caipirinha.png',
+      difficulty: 'easy'
     },
     {
       name:'Cosmopolitan',
-      ingredients: [ 'Lime', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
+      ingredients: [ 'Lime Juice', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
       image: 'cosmopolitan.jpg'
     },
     {
       name:'Long Island Iced Tea',
-      ingredients: [ 'Dark Rum', 'Vodka', 'Tequila', 'Gin', 'Triple Sec', 'Lemon', 'Cola' ],
+      ingredients: [ 'Dark Rum', 'Vodka', 'Tequila', 'Gin', 'Triple Sec', 'Lemon Juice', 'Cola' ],
       image: 'long-island-iced-tea.jpg'
     },
     {
       name:'Manhattan',
-      ingredients: [ 'Whiskey', 'Vermouth', 'Bitters', 'Cherry' ],
-      image: 'manhattan.jpg'
+      ingredients: [ 'Whiskey', 'Vermouth', 'Bitters' ],
+      image: 'manhattan.jpg',
+      difficulty: 'easy'
     },
     {
       name:'Margarita',
-      ingredients: [ 'Tequila', 'Triple Sec', 'Lime', 'Salt' ],
+      ingredients: [ 'Tequila', 'Triple Sec', 'Lime Juice', 'Salt' ],
       image: 'margarita.jpg'
     },
     {
       name:'Martini',
       ingredients: [ 'Gin', 'Vermouth', 'Olive' ],
-      image: 'martini.jpg'
+      image: 'martini.jpg',
+      difficulty: 'easy'
     },
     {
       name:'Mint Julep',
@@ -39,14 +42,27 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     },
     {
       name:'Mojito',
-      ingredients: [ 'White Rum', 'Mint', 'Soda Water', 'Lime', 'Sugar' ],
+      ingredients: [ 'White Rum', 'Mint', 'Soda Water', 'Lime Juice', 'Sugar' ],
       image: 'mojito.jpg'
     },
     {
-      name:'Pina Colada',
-      ingredients: [ 'White Rum', 'Coconut Milk', 'Pineapple', 'Cherry' ],
-      image: 'pina-colada.png'
+      name:'Old Fashioned',
+      ingredients: [ 'Bourbon', 'Bitters', 'Sugar' ],
+      image: 'old-fashioned.jpg',
+      difficulty: 'easy'
     },
+    {
+      name:'Pina Colada',
+      ingredients: [ 'White Rum', 'Coconut Milk', 'Pineapple' ],
+      image: 'pina-colada.png',
+      difficulty: 'easy'
+    },
+    {
+      name:'White Russian',
+      ingredients: [ 'Vodka', 'Kahlua', 'Cream' ],
+      image: 'white-russian.png',
+      difficulty: 'easy'
+    }
 
   ]
 
@@ -54,15 +70,16 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     { name: 'Bitters', selected: false, hint: false},
     { name: 'Bourbon', selected: false, hint: false},
     { name: 'Brown Sugar', selected: false, hint: false},
-    { name: 'Cherry', selected: false, hint: false},
     { name: 'Cointreau', selected: false, hint: false},
     { name: 'Coconut Milk', selected: false, hint: false},
     { name: 'Cola', selected: false, hint: false},
     { name: 'Cranberry Juice', selected: false, hint: false},
+    { name: 'Cream', selected: false, hint: false},
     { name: 'Dark Rum', selected: false, hint: false},
     { name: 'Gin', selected: false, hint: false},
-    { name: 'Lemon', selected: false, hint: false},
-    { name: 'Lime', selected: false, hint: false},
+    { name: 'Kahlua', selected: false, hint: false},
+    { name: 'Lemon Juice', selected: false, hint: false},
+    { name: 'Lime Juice', selected: false, hint: false},
     { name: 'Mint', selected: false, hint: false},
     { name: 'Pineapple', selected: false, hint: false},
     { name: 'Salt', selected: false, hint: false},
@@ -114,9 +131,16 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
   }
   $scope.presentCocktail = function(){
     var rand = Math.floor( Math.random() * $scope.cocktails.length )
-    while ( $scope.cocktails[rand] == $scope.cocktail ){
-      rand = Math.floor( Math.random() * $scope.cocktails.length )
-      }
+    if ( $scope.difficulty == 'easy' ){
+      while ( $scope.cocktails[rand] == $scope.cocktail || $scope.cocktails[rand].difficulty != 'easy' ){
+        rand = Math.floor( Math.random() * $scope.cocktails.length )
+        }
+    } else if ( $scope.difficulty == 'hard' ){
+      while ( $scope.cocktails[rand] == $scope.cocktail ){
+        rand = Math.floor( Math.random() * $scope.cocktails.length )
+        }
+    }
+
     $scope.cocktail = $scope.cocktails [ rand ]
   }
 
@@ -150,9 +174,11 @@ app.controller('MainController', ['$scope', '$interval', '$location', '$timeout'
     $scope.init()
   }
   $scope.init = function () {
+    $scope.difficulty = preferencesService.getDifficulty()
+    console.log( $scope.difficulty )
     $scope.gameOver = false
     $scope.score = 0
-    $scope.seconds = 60
+    $scope.seconds = preferencesService.getStartTime()
     $scope.showOverlay = false
     for ( var i = 0; i< $scope.ingredients.length; i++ ){
       $scope.ingredients[i].selected = false

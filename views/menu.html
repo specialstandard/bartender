@@ -18,6 +18,33 @@
     <br><br>
     <button class = "btn-round btn-option-big shadow " ng-click="onClickLearn()" >
       <i class="fa fa-leanpub"></i>  Learn The Drinks </button>
+      <br><br><br>
+      <div class="cocktail-name center">Difficulty:</div>
+      <br>
+      <button class = "btn-round shadow " ng-class="{selected:difficulty=='easy'}"
+        ng-click="onClickDifficulty('easy')" >
+        <i class="fa fa-star-half-o"></i>  Easy </button> (3 ingredients or less)
+        <br><br>
+      <button class = "btn-round shadow " ng-class="{selected:difficulty=='hard'}"
+        ng-click="onClickDifficulty('hard')" >
+        <i class="fa fa-star"></i>  Hard </button> (Bring it on!)
+
+        <br><br><br>
+        <div class="cocktail-name center">Start Time:</div>
+        <br>
+        <button class = "btn-round shadow " ng-class="{selected:startTime=='30'}"
+          ng-click=" onClickStartTime( 30 )" >
+          <i class="fa fa-battery-1"></i>  30s </button>
+        <button class = "btn-round shadow " ng-class="{selected:startTime=='60'}"
+          ng-click=" onClickStartTime( 60 )" >
+          <i class="fa fa-battery-2"></i>  1 min </button>
+        <button class = "btn-round shadow " ng-class="{selected:startTime=='120'}"
+          ng-click=" onClickStartTime( 120 )" >
+          <i class="fa fa-battery-3"></i>  2 min </button>
+        <button class = "btn-round shadow " ng-class="{selected:startTime=='180'}"
+          ng-click=" onClickStartTime( 180 )" >
+          <i class="fa fa-battery-4"></i>  3 min </button>
+
   </div>
 
 </div>
