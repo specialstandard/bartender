@@ -51,6 +51,11 @@ html, body {
 .menu {
   position: absolute;
   right: 0px;
+  top: 100px;
+}
+.btn-back {
+  position: absolute;
+  right: 0px;
   top: 65px;
 }
 
@@ -87,6 +92,9 @@ html, body {
   background: #dee9ec;
   font-size: 22px;
   opacity: 1;
+}
+.btn-round:active {
+  background: #89a4d1;
 }
 .btn-ingredient {
   font-size: 18px;
