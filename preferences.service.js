@@ -1,8 +1,8 @@
 app.factory('preferencesService', ['$timeout', function( $timeout ){
-  
+
   return {
     difficulty: 'easy',
-    startTime: 60,
+    startTime: 30,
     setDifficulty: function ( difficulty ){
       this.difficulty = difficulty
     },
