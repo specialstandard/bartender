@@ -3,6 +3,12 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
   return {
     cocktails: [
       {
+        name:'Appletini',
+        ingredients: [ 'Vodka', 'Apple Schnapps', 'Pineapple Juice' ],
+        image: 'appletini.jpg',
+        difficulty: 'easy'
+      },
+      {
         name:'Caipirinha',
         ingredients: [ 'White Rum', 'Brown Sugar', 'Lime Juice' ],
         image: 'caipirinha.png',
@@ -12,6 +18,11 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
         name:'Cosmopolitan',
         ingredients: [ 'Lime Juice', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
         image: 'cosmopolitan.jpg'
+      },
+      {
+        name:'Jager Bomb',
+        ingredients: [ 'Jagermeister', 'Red Bull' ],
+        image: 'jager-bomb.png'
       },
       {
         name:'Kamikaze',
@@ -69,6 +80,18 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
         difficulty: 'easy'
       },
       {
+        name:'Screwdriver',
+        ingredients: [ 'Vodka', 'Orange Juice' ],
+        image: 'screwdriver.jpg',
+        difficulty: 'easy'
+      },
+      {
+        name:'Sex on the Beach',
+        ingredients: [ 'Vodka', 'Peach Schnapps', 'Grenadine', 'Orange Juice' ],
+        image: 'sex-on-the-beach.jpg',
+        difficulty: 'easy'
+      },
+      {
         name:'White Russian',
         ingredients: [ 'Vodka', 'Kahlua', 'Cream' ],
         image: 'white-russian.png',
@@ -78,6 +101,7 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
     ],
 
     ingredients: [
+      { name: 'Apple Schnapps', selected: false, hint: false},
       { name: 'Bitters', selected: false, hint: false},
       { name: 'Bourbon', selected: false, hint: false},
       { name: 'Brown Sugar', selected: false, hint: false},
@@ -88,17 +112,22 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       { name: 'Cream', selected: false, hint: false},
       { name: 'Dark Rum', selected: false, hint: false},
       { name: 'Gin', selected: false, hint: false},
+      { name: 'Grenadine', selected: false, hint: false},
+      { name: 'Jagermeister', selected: false, hint: false},
       { name: 'Kahlua', selected: false, hint: false},
       { name: 'Lemon Juice', selected: false, hint: false},
       { name: 'Lime Juice', selected: false, hint: false},
       { name: 'Mint', selected: false, hint: false},
+      { name: 'Peach Schnapps', selected: false, hint: false},
       { name: 'Pineapple', selected: false, hint: false},
+      { name: 'Red Bull', selected: false, hint: false},
       { name: 'Salt', selected: false, hint: false},
       { name: 'Soda Water', selected: false, hint: false},
       { name: 'Sugar', selected: false, hint: false},
       { name: 'Tequila', selected: false, hint: false},
       { name: 'Triple Sec', selected: false, hint: false},
       { name: 'Olive', selected: false, hint: false},
+      { name: 'Orange Juice', selected: false, hint: false},
       { name: 'Vermouth', selected: false, hint: false},
       { name: 'Vodka', selected: false, hint: false},
       { name: 'Vodka Citron', selected: false, hint: false},
