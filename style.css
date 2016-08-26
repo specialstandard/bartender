@@ -162,6 +162,8 @@ html, body {
   padding: 4px;
   top: 190px;
   right: 3px;
+  height: 350px;
+  overflow: auto;
   z-index: 2;
 }
 .cocktail-list-item {

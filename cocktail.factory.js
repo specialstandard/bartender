@@ -17,22 +17,26 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       {
         name:'Cosmopolitan',
         ingredients: [ 'Lime Juice', 'Cranberry Juice', 'Cointreau', 'Vodka Citron' ],
-        image: 'cosmopolitan.jpg'
+        image: 'cosmopolitan.jpg',
+        difficulty: 'hard'
       },
       {
         name:'Jager Bomb',
         ingredients: [ 'Jagermeister', 'Red Bull' ],
-        image: 'jager-bomb.png'
+        image: 'jager-bomb.png',
+        difficulty: 'easy'
       },
       {
         name:'Kamikaze',
         ingredients: [ 'Vodka', 'Triple Sec', 'Lime Juice' ],
-        image: 'kamikaze.gif'
+        image: 'kamikaze.gif',
+        difficulty: 'easy'
       },
       {
         name:'Long Island Iced Tea',
         ingredients: [ 'Dark Rum', 'Vodka', 'Tequila', 'Gin', 'Triple Sec', 'Lemon Juice', 'Cola' ],
-        image: 'long-island-iced-tea.jpg'
+        image: 'long-island-iced-tea.jpg',
+        difficulty: 'hard'
       },
       {
         name:'Manhattan',
@@ -43,7 +47,8 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       {
         name:'Margarita',
         ingredients: [ 'Tequila', 'Triple Sec', 'Lime Juice', 'Salt' ],
-        image: 'margarita.jpg'
+        image: 'margarita.jpg',
+        difficulty: 'hard'
       },
       {
         name:'Martini',
@@ -54,12 +59,14 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       {
         name:'Mint Julep',
         ingredients: [ 'Bourbon', 'Water', 'Sugar', 'Mint' ],
-        image: 'mint-julep.jpg'
+        image: 'mint-julep.jpg',
+        difficulty: 'hard'
       },
       {
         name:'Mojito',
         ingredients: [ 'White Rum', 'Mint', 'Soda Water', 'Lime Juice', 'Sugar' ],
-        image: 'mojito.jpg'
+        image: 'mojito.jpg',
+        difficulty: 'hard'
       },
       {
         name:'Old Fashioned',
@@ -71,6 +78,12 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
         name:'Pina Colada',
         ingredients: [ 'White Rum', 'Coconut Milk', 'Pineapple' ],
         image: 'pina-colada.png',
+        difficulty: 'easy'
+      },
+      {
+        name:'Red Headed Slut',
+        ingredients: [ 'Jagermeister', 'Vodka', 'Cranberry Juice' ],
+        image: 'red-headed-slut.png',
         difficulty: 'easy'
       },
       {
@@ -88,6 +101,12 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       {
         name:'Sex on the Beach',
         ingredients: [ 'Vodka', 'Peach Schnapps', 'Grenadine', 'Orange Juice' ],
+        image: 'sex-on-the-beach.jpg',
+        difficulty: 'hard'
+      },
+      {
+        name:'Tequila Sunrise',
+        ingredients: [ 'Tequila', 'Grenadine', 'Orange Juice' ],
         image: 'sex-on-the-beach.jpg',
         difficulty: 'easy'
       },
