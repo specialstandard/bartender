@@ -10,11 +10,11 @@ app.controller('MenuController', ['$scope', '$interval', '$location', 'preferenc
   }
 
   $scope.onClickTest = function () {
-    $location.url( '/' )
+    $location.url( '/main' )
   }
 
   $scope.onClickLearn = function () {
-    $location.url( '/learn' )
+    $location.url( '/' )
   }
   $scope.onClickDifficulty = function ( difficulty ) {
     preferencesService.setDifficulty( difficulty )

@@ -3,8 +3,8 @@ app.controller('LearnController', ['$scope', '$interval', '$location', '$timeout
    $scope.cocktails = cocktailFactory.getCocktails()
    $scope.ingredients = cocktailFactory.getIngredients()
 
-  $scope.cocktail = $scope.cocktails [ 1 ]   //  Cosmopolitan default
-  $scope.showList = false
+  $scope.cocktail = $scope.cocktails [ Math.floor( Math.random() * $scope.cocktails.length ) ]   //  Cosmopolitan default
+  $scope.showList = true
 
   $scope.onClickMenu = function (){
     $location.url('/menu')

@@ -1,16 +1,16 @@
 app.config( function( $routeProvider ){
   $routeProvider
     .when( '/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainController'
+      templateUrl: 'views/learn.html',
+      controller: 'LearnController'
     })
     .when( '/menu', {
       templateUrl: 'views/menu.html',
       controller: 'MenuController'
     })
-    .when( '/learn', {
-      templateUrl: 'views/learn.html',
-      controller: 'LearnController'
+    .when( '/main', {
+      templateUrl: 'views/main.html',
+      controller: 'MainController'
     })
     .otherwise('/')
 })

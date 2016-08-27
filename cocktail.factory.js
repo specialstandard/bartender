@@ -107,7 +107,7 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       {
         name:'Tequila Sunrise',
         ingredients: [ 'Tequila', 'Grenadine', 'Orange Juice' ],
-        image: 'sex-on-the-beach.jpg',
+        image: 'tequila-sunrise.jpg',
         difficulty: 'easy'
       },
       {
