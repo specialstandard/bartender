@@ -83,14 +83,14 @@ html, body {
 .ingredients-list{
   position: absolute;
   bottom: 50px;
-  left: 100px;
+  left: 20px;
   background: #fff;
   opacity: .8;
 }
 .ingredient-list-item {
   display: block;
   margin: 2px 4px;
-  font-size: 33px;
+  font-size: 35px;
 }
 .btn-round{
   border-radius: 5px;
