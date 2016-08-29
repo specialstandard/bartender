@@ -76,7 +76,7 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       },
       {
         name:'Pina Colada',
-        ingredients: [ 'White Rum', 'Coconut Milk', 'Pineapple' ],
+        ingredients: [ 'White Rum', 'Coconut Milk', 'Pineapple Juice' ],
         image: 'pina-colada.png',
         difficulty: 'easy'
       },
@@ -138,7 +138,7 @@ app.factory('cocktailFactory', ['$timeout', function( $timeout ){
       { name: 'Lime Juice', selected: false, hint: false},
       { name: 'Mint', selected: false, hint: false},
       { name: 'Peach Schnapps', selected: false, hint: false},
-      { name: 'Pineapple', selected: false, hint: false},
+      { name: 'Pineapple Juice', selected: false, hint: false},
       { name: 'Red Bull', selected: false, hint: false},
       { name: 'Salt', selected: false, hint: false},
       { name: 'Soda Water', selected: false, hint: false},
