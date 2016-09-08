@@ -155,6 +155,8 @@ html, body {
   padding-left: 20px;
 }
 .cocktail-list {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
   position: absolute;
   border: 1px solid black;
   background: #fff;
@@ -167,6 +169,8 @@ html, body {
   z-index: 2;
 }
 .cocktail-list-item {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
   background-size: contain;
   background-repeat: no-repeat;
   font-size: 28px;
